@@ -27,8 +27,6 @@
 
 // };
 
-
-
 // var config = {
 // 	port: 8080,
 
@@ -45,8 +43,6 @@
 //     	module: 'aiclientdebugger',
 //     	position: 'bottom_right'
 //     },
-
-
 
 // 		{
 // 			module: "updatenotification",
@@ -66,7 +62,6 @@
 // 						symbol: "calendar-check-o ",
 // 						url: ""
 // 					}
-
 
 // 				]
 // 			}
@@ -111,7 +106,6 @@
 // 			}
 // 		},
 
-
 //   {
 //     module: 'MMM-bitcoin',
 //     position: 'bottom_left',
@@ -121,7 +115,6 @@
 //       updateInterval: 60000 // update interval in milliseconds
 //     }
 //   },
-
 
 // 	{
 // 		module: 'email',
@@ -145,7 +138,6 @@
 //                     maxCharacters: 30
 //                 }
 // 	},
-
 
 // 	]
 
@@ -175,8 +167,6 @@
 //     	position: 'bottom_right'
 //     },
 
-
-
 // 		{
 // 			module: "updatenotification",
 // 			position: "top_bar"
@@ -195,7 +185,6 @@
 // 						symbol: "calendar-check-o ",
 // 						url: ""
 // 					}
-
 
 // 				]
 // 			}
@@ -235,7 +224,6 @@
 // 			}
 // 		},
 
-
 //   {
 //     module: 'MMM-bitcoin',
 //     position: 'bottom_left',
@@ -245,7 +233,6 @@
 //       updateInterval: 60000 // update interval in milliseconds
 //     }
 //   },
-
 
 // 	{
 // 		module: 'email',
@@ -270,7 +257,6 @@
 //                 }
 // 	},
 
-
 // 	]
 
 // };
@@ -290,7 +276,7 @@
  *
  */
 
-var config = {
+/* var config = {
 	address: "localhost", // Address to listen on, can be:
 	// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 	// - another specific IPv4/6 to listen on a specific interface
@@ -375,163 +361,116 @@ var config = {
 
 };
 
-/*************** DO NOT EDIT THE LINE BELOW ***************/
 if (typeof module !== "undefined") {
 	module.exports = config;
 }
-
-
+ */
 
 var config = {
-	port: 8080,
+  port: 8080,
 
-	language: 'en',
-	timeFormat: 24,
-	units: 'metric',
+  language: "en",
+  timeFormat: 24,
+  units: "metric",
 
-	modules: [ //{
-		// 		module: 'aiclient',
-		// 		position: 'middle_center' // This can be any of the regions.
-		// 	},
-		// 	{
-		// 		module: 'aiclientdebugger',
-		// 		position: 'bottom_right'
-		// 	},
+  modules: [
+    //{
+    // 		module: 'aiclient',
+    // 		position: 'middle_center' // This can be any of the regions.
+    // 	},
+    // 	{
+    // 		module: 'aiclientdebugger',
+    // 		position: 'bottom_right'
+    // 	},
 
+    {
+      module: "updatenotification",
+      position: "top_bar"
+    },
+    {
+      module: "clock",
+      position: "top_left"
+    },
+    {
+      module: "calendar",
+      position: "top_left",
+      config: {
+        calendars: [
+          {
+            symbol: "calendar-check-o ",
+            url:
+              "https://www.calendarlabs.com/templates/ical/India-Holidays.ics"
+          },
+          {
+            symbol: "calendar",
+            url:
+              "https://calendar.google.com/calendar/ical/venkatpoojari97%40gmail.com/public/basic.ics"
+          }
+        ]
+      }
+    },
+    {
+      module: "compliments",
+      position: "lower_third"
+    },
 
+    {
+      module: "currentweather",
+      position: "top_right",
+      config: {
+        location: "NAVI MUMBAI",
+        locationID: "", //ID from http://www.openweathermap.org/help/city_list.txt
+        appid: "af788bb8e41729780ce0541603f8201f"
+      }
+    },
+   
+    {
+      module: "newsfeed",
+      position: "bottom_bar",
+      config: {
+        feeds: [
+          {
+            title: "Hindustan Times",
+            url: "http://www.hindustantimes.com/rss/topnews/rssfeed.xml"
+          }
+        ],
+        showSourceTitle: true,
+        showPublishDate: true
+      }
+    },
 
-		{
-			module: "updatenotification",
-			position: "top_bar"
-		},
-		{
-			module: "clock",
-			position: "top_left"
-		},
-		{
-			module: "calendar",
-			position: "top_left",
-			config: {
-				calendars: [{
-						symbol: "calendar-check-o ",
-						url: "https://www.calendarlabs.com/templates/ical/India-Holidays.ics"
-					},
-					{
-						symbol: "calendar",
-						url: "https://calendar.google.com/calendar/ical/venkatpoojari97%40gmail.com/public/basic.ics",
+ 
+    {
+      module: "iFrame",
+      position: "bottom_left", // This can be any of the regions.
+      config: {
+        // See 'Configuration options' for more information.
+        url: "ENTER IN URL",
+        width: "200%", // Optional. Default: 100%
+        height: "100px" //Optional. Default: 100px
+      }
+    },
 
-					}
-
-
-				]
-			}
-		},
-		{
-			module: "compliments",
-			position: "lower_third"
-		},
-
-		{
-			module: "currentweather",
-			position: "top_right",
-			config: {
-				location: "NAVI MUMBAI",
-				locationID: "", //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "af788bb8e41729780ce0541603f8201f"
-			}
-		},
-		{
-			module: "weatherforecast",
-			position: "top_right",
-			header: "Weather Forecast",
-			config: {
-				location: "",
-				locationID: "", //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: ""
-			}
-		},
-
-		{
-			module: "newsfeed",
-			position: "bottom_bar",
-			config: {
-				feeds: [{
-					title: "Hindustan Times",
-					url: "http://www.hindustantimes.com/rss/topnews/rssfeed.xml"
-				}],
-				showSourceTitle: true,
-				showPublishDate: true
-			}
-		},
-
-
-		{
-			module: 'MMM-bitcoin',
-			position: 'bottom_left',
-			config: {
-				fiat: 'usd', // 'usd' and 'eur' available, defaults to 'usd'
-				showBefore: 'Bitcoin', // will display before the bitcoin price, default 'Bitstamp'
-				updateInterval: 60000 // update interval in milliseconds
-			}
-		},
-
-
-		{
-			module: 'email',
-			position: 'bottom_left',
-			header: 'Email',
-			config: {
-				accounts: [{
-						user: 'example@gmail.com',
-						password: 'example',
-						host: 'imap.gmail.com',
-						port: 993,
-						tls: true,
-						authTimeout: 10000,
-						numberOfEmails: 6,
-
-					},
-
-				],
-				fade: false,
-				maxCharacters: 30
-			}
-		},
-		{
-			module: 'iFrame',
-			position: 'bottom_lefr',	// This can be any of the regions.
-			config: {
-				// See 'Configuration options' for more information.
-					url: "ENTER IN URL",
-					"width": "200%", // Optional. Default: 100%
-					"height": "100px" //Optional. Default: 100px
-				}
-			},
-	
-		{
-			module: 'googlemap',
-			position: 'bottom_left',
-			config: {
-				apikey: 'AIzaSyAi2nIKI4PAlj8j6WkHoIbRQ79Z2RxWFqM',
-				origin: 'Mulund ',
-				destination: 'Nerul',
-			}
-		},
-		{
-			module: 'aiclient',
-			position: 'middle_center' // This can be any of the regions.
-		},
-		{
-			module: 'aiclientdebugger',
-			position: 'bottom_right'
-		}
-
-
-	]
-
+    {
+      module: "googlemap",
+      position: "bottom_left",
+      config: {
+        apikey: "AIzaSyCt_7Kc0Ot-ToTJGmIhjDCe_hFevoeviig",
+        origin: "Mulund ",
+        destination: "Nerul"
+      }
+    },
+    {
+      module: "aiclient",
+      position: "middle_center" // This can be any of the regions.
+    },
+    {
+      module: "aiclientdebugger",
+      position: "bottom_right"
+    }
+  ]
 };
 
-
-if (typeof module !== 'undefined') {
-	module.exports = config;
+if (typeof module !== "undefined") {
+  module.exports = config;
 }
